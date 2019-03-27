@@ -33,7 +33,7 @@ class Game {
   }
   
   generatePrize() {
-    if (this.round === 2) {
+    if (this.round === 5) {
       let bonusWheel = new BonusWheel();
       this.currentPrize = bonusWheel.changePrizes();
     } else {
@@ -41,6 +41,7 @@ class Game {
       this.currentPrize = wheel.spin();
       if (this.currentPrize === 'BANKRUPT') {
         this.players[this.playerIndex].totalScore = 0;
+        domUpdates.updateBank(this.playerIndex, this.players[this.playerIndex].totalScore)
         this.changeTurn();
       } else if (this.currentPrize === 'LOSE A TURN') {
         this.changeTurn();
@@ -88,23 +89,32 @@ class Game {
   }
 
   changeTurn() {
-    this.playerIndex === 2 
-      ? this.playerIndex = 0
-      : this.playerIndex++;
-    domUpdates.updateActivePlayer(this.playerIndex);
+    if (this.round < 5) {
+      this.playerIndex === 2 
+        ? this.playerIndex = 0
+        : this.playerIndex++;
+        domUpdates.updateActivePlayer(this.playerIndex);
+    }
   }
 
   instantiatePlayers() {
     this.players = domUpdates.getNames();
     this.players = this.players.map(p => {
-      return p = new Player(p)
+      return p = new Player(p);
     });
   }
 
   changeRound() {
     this.round++ && this.newQ();
+    console.log(this.round);
     if (this.round === 6) {
-      this.round = 1
+      this.round = 1;
+    } else if (this.round === 5) {
+      let highScore = this.players.map(player => player.totalScore)
+        .sort((a, b) => a - b).pop();
+      let winnerIdx = this.players.indexOf(this.players.find(player => player.totalScore === highScore));
+      this.playerIndex = winnerIdx;
+      domUpdates.updateActivePlayer(this.playerIndex);
     }
   }
 

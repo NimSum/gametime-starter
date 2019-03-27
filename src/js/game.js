@@ -121,6 +121,7 @@ class Game {
   newQ() {
     let q = this.allQs.sort(() => 0.5 - Math.random()).pop();
     this.currentQuestion = new Question(q.correct_answer, q.total_number_of_letters, [], q.description, q.category);
+    this.ltrArr = [];
     domUpdates.clearFields();
     domUpdates.updateQInfo(this.currentQuestion);
     console.log(this.currentQuestion.answer)

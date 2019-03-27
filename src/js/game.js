@@ -116,6 +116,9 @@ class Game {
       this.playerIndex = winnerIdx;
       domUpdates.updateActivePlayer(this.playerIndex);
     }
+    if (this.round === 2) {
+      domUpdates.showBonusRound();
+    }
   }
 
   newQ() {

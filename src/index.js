@@ -33,7 +33,7 @@ $(document).ready( () => {
   $('.check-btn').on('click', () => {
     let vowels = ['A', 'E', 'I', 'O', 'U']
     if (vowels.includes($('.ltr-input').val().toUpperCase())) {
-      console.log('vowels only');
+      return;
     } else if ($('.ltr-input').val() !== '') {
       game.checkConsonant();
       $('.ltr-input').val('')

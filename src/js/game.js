@@ -52,6 +52,7 @@ class Game {
   validateAnswer() {
     if (domUpdates.getAnswer().toUpperCase() === this.currentQuestion.answer.toUpperCase()) {
       domUpdates.showAnser();
+      setTimeout(()=> this.newQ(), 3000);
       this.players[this.playerIndex].totalScore += this.players[this.playerIndex].currentScore
       domUpdates.updateBank(this.playerIndex, this.players[this.playerIndex].totalScore)
       this.players.forEach((p, i) => {
@@ -59,9 +60,8 @@ class Game {
         domUpdates.updateScore(i, p.currentScore)
       })
       this.changeRound();
-      setTimeout(()=> this.newQ(), 3);
     } else {
-      console.log('incorrect!')
+      domUpdates.wrongAns();
     }
     this.changeTurn();
   }
@@ -106,7 +106,6 @@ class Game {
 
   changeRound() {
     this.round++ && this.newQ();
-    console.log(this.round);
     if (this.round === 6) {
       this.round = 1;
     } else if (this.round === 5) {
@@ -115,8 +114,6 @@ class Game {
       let winnerIdx = this.players.indexOf(this.players.find(player => player.totalScore === highScore));
       this.playerIndex = winnerIdx;
       domUpdates.updateActivePlayer(this.playerIndex);
-    }
-    if (this.round === 2) {
       domUpdates.showBonusRound();
     }
   }

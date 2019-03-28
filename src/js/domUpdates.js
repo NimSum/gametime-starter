@@ -32,7 +32,7 @@ export default {
     setTimeout(() => {
       $('.prize').parent().addClass('prize-animation');
       $('.prize').text(prize);
-    }, 1)
+    }, 1000)
     this.hideInputs();
     setTimeout(() => {
       if (round < 5) {
@@ -256,12 +256,13 @@ export default {
   showBonusPrizes: () => {
     $('.word-box').hide();
     $('.bonus-prizes').show();
-    let prizes = ['trip to anatomy park', 'your own personal morty', 'a meeseeks box', 'a broken portal gun', 'butter-serving robot', 'one month interdimensional cable'];
+    let prizes = ['Trip to anatomy park', 'Your own personal morty', 'A meeseeks box', 'A broken portal gun', 'Butter-serving robot', 'One month interdimensional cable'];
     $('.bonus-prizes').append(`<h3>Bonus Prizes</h3>`)
     prizes.forEach(prize => $('.bonus-prizes').append(`<span>${prize}</span>`));
     $('.btn-spin').click( () => {
       $('.word-box').show();
       $('.bonus-prizes').empty();
+      $('.btn-spin').attr('disabled', true)
     });
   }
   

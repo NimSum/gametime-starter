@@ -162,7 +162,8 @@ const data = {
           first_word: 12,
           description: 'Any two (or more) related phrases separated by a comma or otherwise used consecutively',
           correct_answer: 'Trick-Or-Treat',
-        },{  
+        },
+        {  
           category:'Rhyme Time',
           number_of_words: 1,
           total_number_of_letters: 11,
@@ -185,7 +186,8 @@ const data = {
           first_word: 11,
           description: 'Location or object(s) found within a typical house.',
           correct_answer: 'Windowpanes',
-        },{  
+        },
+        {  
           category:'Around The House',
           number_of_words: 1,
           total_number_of_letters: 10,
@@ -216,7 +218,8 @@ const data = {
           first_word: 10,
           description: 'Rhyming word(s) or phrase(s).',
           correct_answer: 'Willy-Nilly',
-        },{  
+        },
+        {  
           category:'Rhyme Time',
           number_of_words: 1,
           total_number_of_letters: 6,

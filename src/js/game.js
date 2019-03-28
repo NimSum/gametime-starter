@@ -33,7 +33,7 @@ class Game {
   }
   
   generatePrize() {
-    if (this.round === 2) {
+    if (this.round === 5) {
       let bonusWheel = new BonusWheel();
       this.currentPrize = bonusWheel.changePrizes();
     } else {

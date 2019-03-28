@@ -9,10 +9,13 @@ $bodyfont: 'Viga', sans-serif;
 
 //colors
 $board: hsla(106, 95%, 55%, 0.3);
-$btn: hsla(64, 95%, 65%, 0.8);
-// hsla(106, 5%, 5%, 1)
+$btn: rgba(229, 230, 110, 1);
 $playerbg: hsla(106, 5%, 95%, .3);
 $player: hsla(106, 75%, 85%, .6);
+$border: hsla(98, 49%, 44%, 1);
+// $p1: ;
+// $p2: ;
+// $p3: ;
 
 // animations
 
@@ -38,14 +41,18 @@ $player: hsla(106, 75%, 85%, .6);
   }
 }
 
-@keyframes drop-shadow {
+@keyframes expand-font {
   0% {
-    transform: translateZ(0);
-    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+    letter-spacing: -0.3em;
+    transform: translateZ(-700px);
+    opacity: 0;
+  }
+  40% {
+    opacity: 0.6;
   }
   100% {
-    transform: translateZ(50px);
-    box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.35);
+    transform: translateZ(0);
+    opacity: 1;
   }
 }
 

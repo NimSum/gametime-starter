@@ -33,14 +33,15 @@ class Game {
   }
   
   generatePrize() {
-    if (this.round === 2) {
+    if (this.round === 5) {
       let bonusWheel = new BonusWheel();
       this.currentPrize = bonusWheel.changePrizes();
     } else {
       let wheel = new Wheel();
-      this.currentPrize = wheel.spin();
+      this.currentPrize = wheel.spin(this.round);
       if (this.currentPrize === 'BANKRUPT') {
         this.players[this.playerIndex].totalScore = 0;
+        domUpdates.updateBank(this.playerIndex, this.players[this.playerIndex].totalScore)
         this.changeTurn();
       } else if (this.currentPrize === 'LOSE A TURN') {
         this.changeTurn();
@@ -51,6 +52,7 @@ class Game {
   validateAnswer() {
     if (domUpdates.getAnswer().toUpperCase() === this.currentQuestion.answer.toUpperCase()) {
       domUpdates.showAnser();
+      setTimeout(()=> this.newQ(), 3000);
       this.players[this.playerIndex].totalScore += this.players[this.playerIndex].currentScore
       domUpdates.updateBank(this.playerIndex, this.players[this.playerIndex].totalScore)
       this.players.forEach((p, i) => {
@@ -58,9 +60,8 @@ class Game {
         domUpdates.updateScore(i, p.currentScore)
       })
       this.changeRound();
-      setTimeout(()=> this.newQ(), 3);
     } else {
-      console.log('incorrect!')
+      domUpdates.wrongAns();
     }
     this.changeTurn();
   }
@@ -88,25 +89,31 @@ class Game {
   }
 
   changeTurn() {
-    this.playerIndex === 2 
-      ? this.playerIndex = 0
-      : this.playerIndex++;
-    domUpdates.updateActivePlayer(this.playerIndex);
+    if (this.round < 5) {
+      this.playerIndex === 2 
+        ? this.playerIndex = 0
+        : this.playerIndex++;
+      domUpdates.updateActivePlayer(this.playerIndex);
+    }
   }
 
   instantiatePlayers() {
     this.players = domUpdates.getNames();
     this.players = this.players.map(p => {
-      return p = new Player(p)
+      return p = new Player(p);
     });
   }
 
   changeRound() {
     this.round++ && this.newQ();
     if (this.round === 6) {
-      this.round = 1
-    }
-    if (this.round === 2) {
+      this.round = 1;
+    } else if (this.round === 5) {
+      let highScore = this.players.map(player => player.totalScore)
+        .sort((a, b) => a - b).pop();
+      let winnerIdx = this.players.indexOf(this.players.find(player => player.totalScore === highScore));
+      this.playerIndex = winnerIdx;
+      domUpdates.updateActivePlayer(this.playerIndex);
       domUpdates.showBonusRound();
     }
   }
@@ -114,6 +121,7 @@ class Game {
   newQ() {
     let q = this.allQs.sort(() => 0.5 - Math.random()).pop();
     this.currentQuestion = new Question(q.correct_answer, q.total_number_of_letters, [], q.description, q.category);
+    this.ltrArr = [];
     domUpdates.clearFields();
     domUpdates.updateQInfo(this.currentQuestion);
     console.log(this.currentQuestion.answer)

@@ -12475,7 +12475,7 @@ class Game {
   }
   
   generatePrize() {
-    if (this.round === 2) {
+    if (this.round === 5) {
       let bonusWheel = new _bonusWheel__WEBPACK_IMPORTED_MODULE_5__["default"]();
       this.currentPrize = bonusWheel.changePrizes();
     } else {

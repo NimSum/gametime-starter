@@ -47,12 +47,13 @@ main aside {
 }
 
 .prize-container {
+  border: 1ps solid black;
   position: absolute;
+  width: 95%;
   text-align: center;
   white-space: nowrap;
-  width: 300px;
   top: 35%;
-  left: 10%;
+  text-align: center;
   font-family: $bodyfont;
   font-size: 3rem;
 }

@@ -28,13 +28,12 @@ $(document).ready( () => {
   
   $('.btn-spin').click( () => {
     game.generatePrize();
-    console.log(game.currentPrize);
   });
 
   $('.check-btn').on('click', () => {
     let vowels = ['A', 'E', 'I', 'O', 'U']
     if (vowels.includes($('.ltr-input').val().toUpperCase())) {
-      console.log('vowels only');
+      return;
     } else if ($('.ltr-input').val() !== '') {
       game.checkConsonant();
       $('.ltr-input').val('')
@@ -68,6 +67,19 @@ $(document).ready( () => {
     domUpdates.bonusRound();
   });
 
+  $('.spin-pop-up').click( (e) => {
+    let btn = e.target.textContent;
+    if (btn === 'submit choices') {
+      let letters = domUpdates.getBonusLetters();
+      $('.bonus-box').hide();
+      letters.forEach(letter => {
+        game.checkConsonant(letter.toUpperCase());
+        domUpdates.hideGifs();
+      });
+      $('.input-solve').val('');
+      $('.input-solve, .final-solution-btn').show();
+    } 
+  });
 })
 
 

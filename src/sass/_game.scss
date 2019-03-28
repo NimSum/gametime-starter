@@ -31,7 +31,7 @@ header {
   top: 2rem;
   width: 9rem;
   &:hover {
-    background-color: $btn;
+    background-color: yellowgreen;
     border: 3px solid white;
   }
 }
@@ -78,15 +78,14 @@ main {
         
       .check-btn {
         background-color: $btn;
+        border: 4px solid transparent;
         font-size: 1rem;
         border-top-right-radius: 20px;
         border-bottom-right-radius: 20px;
         width: 100px;
         display: none;
-        
         &:hover {
-          background-color: $player;
-          box-shadow: .5rem 1rem 1.5rem .5rem $board;
+          border: 4px solid black;
         }
       }
 
@@ -190,12 +189,12 @@ main {
     padding-left: 5px;
     width: 15rem;
     &:focus {
-      box-shadow: 5px 5px 15px 5px hsla(64, 95%, 65%, 0.8);
+      border: 5px solid $border;
     }
   }
 
   button {
-    border: 3px solid transparent;
+    border: $btn;
     border-radius: 25px;
     font-family: $bodyfont;
     font-size: 2rem;
@@ -203,8 +202,8 @@ main {
     margin: 2rem;
     width: 15rem;
     &:hover {
+      animation: expand-font 0.5s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
       background-color: $btn;
-      border: 3px solid white;
     }
   }
 }

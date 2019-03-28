@@ -29,7 +29,7 @@ export default {
     setTimeout(() => {
       if (round < 5) {
         this.showInput(prize);
-      };
+      }
       this.showVowels();
       this.showSolveInput();
       $('.wheel-img').removeClass('spin');
@@ -42,7 +42,7 @@ export default {
     if (['BANKRUPT', 'LOSE A TURN'].includes(prize)) {
       $('.check-btn, .ltr-input').hide();
       $('.btn-spin').attr('disabled', false);
-    };
+    }
   },
 
   hideInputs: () => {

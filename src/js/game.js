@@ -69,6 +69,10 @@ class Game {
   checkConsonant(vowel) {
     let elem = Object.values(domUpdates.getBoard());
     let consonantGuess = domUpdates.getConsonant() || vowel;
+    if (vowel) {
+      this.players[this.playerIndex].currentScore -= 100;
+      domUpdates.updateScore(this.playerIndex, this.players[this.playerIndex].currentScore);
+    }
     let noMatches = elem.find(el => el.textContent === consonantGuess);
     elem.forEach(e => {
       if (e.textContent === consonantGuess) {

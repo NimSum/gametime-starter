@@ -145,20 +145,20 @@ export default {
   },
 
   correctAns() {
-    $('.word-box').hide();
-    $('.feedback').text('Finally!');
+    // $('.word-box').hide();
+    // $('.feedback').text('Finally!');
     $('.feedback').append(`<img class="gif" src="https://media.giphy.com/media/liBsVeLILcyaY/giphy.gif">`)
     setTimeout(() => this.hideGifs(), 2500)
   },
 
   wrongAns() {
-    $('.word-box').hide();
-    $('.feedback').text('Morty! No!');
+    // $('.word-box').hide();
+    // $('.feedback').text('Morty! No!');
     $('.feedback').append(`<img class="gif" src="https://media.giphy.com/media/3oEdv8roQZywBIT7mE/giphy.gif" >`)
     setTimeout(() => this.hideGifs(), 2500)
   },
 
-  showAnser() {
+  showAnswer() {
     $('.hidden').removeClass('hidden');
   },
 
@@ -215,9 +215,9 @@ export default {
     $('.prize').text('Spin for Bonus!');
     this.showBonusPrizes();
     $('.spin-pop-up').append(`<div class="bonus-box">
-    <input class="bonus-cons-1" type="text" maxlength="1">
-    <input class="bonus-cons-2" type="text" maxlength="1">
-    <input class="bonus-cons-3" type="text" maxlength="1">
+    <input class="bonus-input bonus-cons-1" type="text" maxlength="1">
+    <input class="bonus-input bonus-cons-2" type="text" maxlength="1">
+    <input class="bonus-input bonus-cons-3" type="text" maxlength="1">
     <button class="bonus-vowel" id="bonus-a">A</button>
     <button class="bonus-vowel" id="bonus-e">E</button>
     <button class="bonus-vowel" id="bonus-i">I</button>
@@ -246,11 +246,11 @@ export default {
     $('.word-box').hide();
     $('.bonus-prizes').show();
     let prizes = ['Trip to anatomy park', 'Your own personal morty', 'A meeseeks box', 'A broken portal gun', 'Butter-serving robot', 'One month interdimensional cable'];
-    $('.bonus-prizes').append(`<h3>Bonus Prizes</h3>`)
-    prizes.forEach(prize => $('.bonus-prizes').append(`<span>${prize}</span>`));
+    $('.bonus-prizes').append(`<h3>Bonus Prizes</h3><div class="bonus-prize"></div>`)
+    prizes.forEach(prize => $('.bonus-prize').append(`<span>${prize}</span>`));
     $('.btn-spin').click( () => {
       $('.word-box').show();
-      $('.bonus-prizes').empty();
+      $('.bonus-prizes, .bonus-prize').empty();
       $('.btn-spin').attr('disabled', true)
     });
   }

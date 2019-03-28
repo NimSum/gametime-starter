@@ -8,11 +8,10 @@ describe('Player', () => {
   let player;
 
   beforeEach(() => {
-    player = new Player();
+    player = new Player('Pickle Rick', 'true')
   });
 
   it('should have a default name', () => {
-    let player = new Player('Pickle Rick', 'true')
     expect(player.name).to.equal('Pickle Rick');
     expect(player.answer).to.equal('true');
     expect(player.currentScore).to.equal(0);

@@ -9,7 +9,6 @@ class Wheel {
   
   spin(round) { 
     this.values.push(...this.randomizeValues(data.wheel).slice(0, 6));
-    domUpdates.loadPossiblePrizes(this.values);
     this.currentValue = this.randomizeValues(this.values).pop();
     domUpdates.revealPrize(this.currentValue, round);
     return this.currentValue;

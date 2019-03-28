@@ -17,14 +17,6 @@ export default {
     })
   },
 
-  loadPossiblePrizes(prizes) {
-    $('.possible-prizes').empty();
-    $('.possible-prizes').append('<p>Prizes:</p>');
-    prizes.forEach(prize => {
-      $('.possible-prizes').append(`<span>${prize}</span>`);
-    })
-  },
-
   revealPrize(prize, round) {
     $('.prize').text('');
     $('.wheel-img').addClass('spin');
@@ -78,8 +70,7 @@ export default {
         $('.vowels-to-buy').show();
         $('.vowels-to-buy').addClass('slide-in');
         $('.buy, .btn-spin, .btn-solve').attr('disabled', true);
-        $('.input-solve, .final-solution-btn').hide();
-        $('.check-btn, .ltr-input').hide();
+        $('.input-solve, .final-solution-btn, .check-btn, .ltr-input').hide();
       }
     });
   },
@@ -150,9 +141,7 @@ export default {
 
   appendLetters(letters) {
     $('.letters-used').empty();
-    letters.forEach(ltr => {
-      $('.letters-used').append(ltr)
-    })
+    letters.forEach(ltr => $('.letters-used').append(ltr))
   },
 
   correctAns() {

@@ -105,7 +105,7 @@ class Game {
   }
 
   changeRound() {
-    this.round++ && this.newQ();
+    this.round++;
     if (this.round === 6) {
       this.round = 1;
     } else if (this.round === 5) {

@@ -31,9 +31,11 @@ This project was for the developer to enhance their skills with manipulating cla
 ## Screenshots
 
 Splash Page
+
 [![screencapture-localhost-8080-2019-03-28-08-51-48.png](https://i.postimg.cc/zvKpbMSg/screencapture-localhost-8080-2019-03-28-08-51-48.png)](https://postimg.cc/5Q98Dsr4)
 
 Gameplay
+
 [![screencapture-localhost-8080-2019-03-28-08-54-35.png](https://i.postimg.cc/MZVYYCVc/screencapture-localhost-8080-2019-03-28-08-54-35.png)](https://postimg.cc/PNfZXF6h)
 
 Bonus Round

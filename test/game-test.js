@@ -16,7 +16,7 @@ chai.spy.on(domUpdates, [
   'clearFields',
   'correctAns', 
   'revealPrize', 
-  'showAnser',
+  'showAnswer',
   'showBonusRound',
   'updateActivePlayer',
   'updateBank',
@@ -107,6 +107,7 @@ describe('Game', () => {
   });
 
   it('should generate a prize by spinning the wheel class', () => {
+    game.startRound();
     game.generatePrize();
     expect(game.currentPrize).to.not.equal(undefined);
   });

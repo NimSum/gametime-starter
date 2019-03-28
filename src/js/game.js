@@ -128,7 +128,6 @@ class Game {
     this.ltrArr = [];
     domUpdates.clearFields();
     domUpdates.updateQInfo(this.currentQuestion);
-    console.log(this.currentQuestion.answer)
   }
 }
 

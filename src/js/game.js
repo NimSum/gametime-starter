@@ -33,7 +33,7 @@ class Game {
   }
   
   generatePrize() {
-    if (this.round === 5) {
+    if (this.round === 2) {
       let bonusWheel = new BonusWheel();
       this.currentPrize = bonusWheel.changePrizes();
     } else {
@@ -77,7 +77,6 @@ class Game {
     elem.forEach(e => {
       if (e.textContent === consonantGuess) {
         domUpdates.clearClass(e);
-        domUpdates.correctAns();
         this.players[this.playerIndex].currentScore += this.currentPrize;
       } else if (!this.ltrArr.includes(consonantGuess)) {
         this.ltrArr.push(consonantGuess);
@@ -88,6 +87,7 @@ class Game {
       domUpdates.wrongAns();
       this.changeTurn();
     } else if (!['BANKRUPT', 'LOSE A TURN'].includes(this.currentPrize)) {
+      domUpdates.correctAns();
       domUpdates.updateScore(this.playerIndex, this.players[this.playerIndex].currentScore);
     }
   }

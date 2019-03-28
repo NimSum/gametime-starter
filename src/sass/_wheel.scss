@@ -58,6 +58,10 @@ main aside {
   text-align: center;
   font-family: $bodyfont;
   font-size: 3rem;
+
+  .prize {
+    white-space: normal;
+  }
 }
 
 .prize-animation {

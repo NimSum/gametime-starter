@@ -19,10 +19,10 @@ header {
 
 .new-game-btn {
   display: none;
-  background-color: $board;
+  background-color: white;
   border: 3px solid transparent;
   border-radius: 25px;
-  color: white;
+  color: black;
   font-family: $bodyfont;
   font-size: 1.5rem;
   height: 2rem;
@@ -31,8 +31,8 @@ header {
   top: 2rem;
   width: 9rem;
   &:hover {
-    background-color: yellowgreen;
-    border: 3px solid white;
+    animation: expand-font 0.5s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
+    background-color: $btn;
   }
 }
 
@@ -44,8 +44,8 @@ main {
   section {
     flex: 2;
     font-family: $bodyfont;
-    text-align: center;
     position: relative;
+    text-align: center;
 
     .category {
       font-size: $boardCategory;
@@ -58,15 +58,18 @@ main {
     }
 
     .bonus-prizes {
+      color: $btn;
       display: none;
-      color: gold;
       h3 {
         font-size: 2rem;
       }
       span {
-        display: block;
         font-size: 1.5rem;
         margin: 20px;
+      }
+      .bonus-prize {
+        display: flex;
+        flex-wrap: wrap;
       }
     }
 
@@ -76,29 +79,28 @@ main {
     }
 
     .spin-pop-up {
-      position: absolute;
+      bottom: 0;
+      display: flex;
       font-family: $bodyfont;
-      justify-content: center;
-      width: 100%;
       font-size: 2rem;
       height: 60px;
-      display: flex;
-      bottom: 0;
+      justify-content: center;
+      position: absolute;
+      width: 100%;
 
       button, input {
         animation: bounce-right 0.8s both;
       }
         
       .check-btn {
-        background-color: $btn;
-        border: 4px solid transparent;
+        background-color: white;
         font-size: 1rem;
         border-top-right-radius: 20px;
         border-bottom-right-radius: 20px;
         width: 100px;
         display: none;
         &:hover {
-          border: 4px solid black;
+          background-color: $btn;
         }
       }
 
@@ -154,21 +156,16 @@ main {
     }
     .gif {
       display: block;
+      height: 300px;
       margin: auto;
+      width: 450px;
     }
   }
 
   aside {
     flex: 1;
     max-width: 30%;
-
-    div {
-      button {
-        animation: bounce-right 0.8s both;
-      }
-    }
   }
-
 }
 
 .game-page {
@@ -195,6 +192,18 @@ main {
     font-size: 4rem;
   }
 
+  .p1 {
+    text-shadow: 2px 1px 0px $p1;
+  }
+
+  .p2 {
+    text-shadow: 2px 1px 0px $p2;
+  }
+
+  .p3 {
+    text-shadow: 2px 1px 0px $p3;
+  }
+
   input {
     border-radius: 10px;
     font-size: 2rem;
@@ -219,4 +228,8 @@ main {
       background-color: $btn;
     }
   }
+}
+
+.buy {
+  width: 35%;
 }

@@ -2,6 +2,8 @@
 
 Wheel of Mortys is a game themed after a popular TV Show, Rick and Morty, based on play from the beloved game show, Wheel of Fortune.
 
+[Github-pages game link](https://nimsum.github.io/wheel-of-mortys/)
+
 ## Installation
 
  - clone the repo

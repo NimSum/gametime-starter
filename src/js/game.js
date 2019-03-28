@@ -51,7 +51,7 @@ class Game {
 
   validateAnswer() {
     if (domUpdates.getAnswer().toUpperCase() === this.currentQuestion.answer.toUpperCase()) {
-      domUpdates.showAnser();
+      domUpdates.showAnswer();
       setTimeout(()=> this.newQ(), 3000);
       this.players[this.playerIndex].totalScore += this.players[this.playerIndex].currentScore
       domUpdates.updateBank(this.playerIndex, this.players[this.playerIndex].totalScore)

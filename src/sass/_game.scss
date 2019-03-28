@@ -40,6 +40,7 @@ main {
   background-color: $board;
   min-height: 50vh;
   display: flex;
+  position: relative;
 
   section {
     flex: 2;
@@ -157,7 +158,9 @@ main {
     .gif {
       display: block;
       height: 300px;
-      margin: auto;
+      position: absolute;
+      left: 25%;
+      top: 30%;
       width: 450px;
     }
   }

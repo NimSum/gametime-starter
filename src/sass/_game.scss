@@ -19,10 +19,10 @@ header {
 
 .new-game-btn {
   display: none;
-  background-color: $board;
+  background-color: white;
   border: 3px solid transparent;
   border-radius: 25px;
-  color: white;
+  color: black;
   font-family: $bodyfont;
   font-size: 1.5rem;
   height: 2rem;
@@ -31,8 +31,8 @@ header {
   top: 2rem;
   width: 9rem;
   &:hover {
-    background-color: yellowgreen;
-    border: 3px solid white;
+    animation: expand-font 0.5s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
+    background-color: $btn;
   }
 }
 
@@ -48,6 +48,7 @@ main {
     position: relative;
 
     .category {
+      border-bottom: 2px solid $btn;
       font-size: $boardCategory;
       display: inline-block;
       height: 10%;
@@ -76,14 +77,14 @@ main {
     }
 
     .spin-pop-up {
-      position: absolute;
+      bottom: 0;
+      display: flex;
       font-family: $bodyfont;
-      justify-content: center;
-      width: 100%;
       font-size: 2rem;
       height: 60px;
-      display: flex;
-      bottom: 0;
+      justify-content: center;
+      position: absolute;
+      width: 100%;
 
       button, input {
         animation: bounce-right 0.8s both;
@@ -163,9 +164,7 @@ main {
     max-width: 30%;
 
     div {
-      button {
-        animation: bounce-right 0.8s both;
-      }
+      animation: bounce-right 0.8s both;
     }
   }
 
@@ -193,6 +192,18 @@ main {
 
   p {
     font-size: 4rem;
+  }
+
+  .p1 {
+    text-shadow: 2px 1px 0px $p1;
+  }
+
+  .p2 {
+    text-shadow: 2px 1px 0px $p2;
+  }
+
+  .p3 {
+    text-shadow: 2px 1px 0px $p3;
   }
 
   input {

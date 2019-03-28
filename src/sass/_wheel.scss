@@ -7,37 +7,31 @@ main aside {
     justify-content: center;
 
     button {
-      background-color: $btn;
+      background-color: white;
+      border: 1px solid transparent;
       border-radius: 25px;
       white-space: nowrap;
       font-family: $bodyfont;
       font-size: 1.2rem;
       height: 60px;
       margin: 5px 10px;
+      max-width: 35%;
       min-width: 25%;
       padding: 10px;
+
       &:hover {
-        background-color: $player;
-        box-shadow: .5rem 1rem 1.5rem .5rem $board;
+        animation: expand-font 0.5s cubic-bezier(0.215, 0.610, 0.355, 1.000);
+        background-color: $btn;
+        border: 1px solid $btn;
       }
     }
+  }  
+  p {
+    font-size: 2rem;
   }
-
-  .possible-prizes {
-    position: absolute;
-    word-wrap: break-word;
-    width: 20%;
-    top: 0;
-    right: 0;
-    flex-direction: column;
-    
-    p {
-      font-size: 2rem;
-    }
-    span {
-      font-size: 1.5rem;
-      padding: .2rem .5rem;
-    }
+  span {
+    font-size: 1.5rem;
+    padding: .2rem .5rem;
   }
 }
 
@@ -71,4 +65,8 @@ main aside {
 .used-ltr-container {
   font-family: $bodyfont;
   font-size: 1.5rem;
+}
+
+.buy {
+  width: 35%;
 }

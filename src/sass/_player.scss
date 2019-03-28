@@ -15,9 +15,9 @@ section.player-section {
     margin: 25px;
     min-height: 100%;
     padding: 10px;
-    text-shadow: 3px 3px 3px black;
     h3, h4 {
       text-align: center;
+      text-shadow: 3px 3px 3px black;
     }
   }
 }
@@ -54,10 +54,10 @@ section.player-section {
 }
 
 .active {
-  border: 6px solid white;
+  border: 6px solid $btn;
   background-color: $board;
 }
 
 .player-two {
-  width: 30%;
+  width: 38%;
 }

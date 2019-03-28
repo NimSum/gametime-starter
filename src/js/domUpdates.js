@@ -25,7 +25,7 @@ export default {
     })
   },
 
-  revealPrize(prize) {
+  revealPrize(prize, round) {
     $('.prize').text('');
     $('.wheel-img').addClass('spin');
     $('.prize').parent().removeClass('prize-animation');
@@ -35,11 +35,13 @@ export default {
     }, 1)
     this.hideInputs();
     setTimeout(() => {
-      this.showInput(prize);
+      if (round < 5) {
+        this.showInput(prize);
+      };
       this.showVowels();
       this.showSolveInput();
       $('.wheel-img').removeClass('spin');
-    }, 5);
+    }, 5000);
   },
 
   showInput(prize) {
@@ -220,15 +222,47 @@ export default {
   },
 
   bonusRound() {
-    $('.used-ltr-container, .game-btns').hide();
-    $('.spin-pop-up').append(`<input class="bonus-input" type="text" maxlength="1">
-    <input class="bonus-input" type="text" maxlength="1">
-    <input class="bonus-input" type="text" maxlength="1">
+    $('.used-ltr-container, .btn-solve, .buy').hide();
+    $('.prize').text('Spin for Bonus!');
+    this.showBonusPrizes();
+    $('.spin-pop-up').append(`<div class="bonus-box">
+    <input class="bonus-cons-1" type="text" maxlength="1">
+    <input class="bonus-cons-2" type="text" maxlength="1">
+    <input class="bonus-cons-3" type="text" maxlength="1">
     <button class="bonus-vowel" id="bonus-a">A</button>
     <button class="bonus-vowel" id="bonus-e">E</button>
     <button class="bonus-vowel" id="bonus-i">I</button>
     <button class="bonus-vowel" id="bonus-o">O</button>
     <button class="bonus-vowel" id="bonus-u">U</button>
-    <button class="bonus-submit" >submit choices</button>`)
+    <button class="bonus-submit" >submit choices</button>
+    </div>`)
+    $('.bonus-vowel').click( (e) => {
+      $(e.target).addClass('bonus-vowel-select');
+      $('.bonus-vowel').attr('disabled', true);
+    })
+  },
+
+  getBonusLetters() {
+    let letters = [];
+    letters.push(
+      $('.bonus-vowel-select').text(),
+      $('.bonus-cons-1').val(),
+      $('.bonus-cons-2').val(),
+      $('.bonus-cons-3').val()
+    );
+    return letters;
+  },
+
+  showBonusPrizes: () => {
+    $('.word-box').hide();
+    $('.bonus-prizes').show();
+    let prizes = ['trip to anatomy park', 'your own personal morty', 'a meeseeks box', 'a broken portal gun', 'butter-serving robot', 'one month interdimensional cable'];
+    $('.bonus-prizes').append(`<h3>Bonus Prizes</h3>`)
+    prizes.forEach(prize => $('.bonus-prizes').append(`<span>${prize}</span>`));
+    $('.btn-spin').click( () => {
+      $('.word-box').show();
+      $('.bonus-prizes').empty();
+    });
   }
+  
 }

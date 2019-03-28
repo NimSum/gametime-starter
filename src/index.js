@@ -28,7 +28,6 @@ $(document).ready( () => {
   
   $('.btn-spin').click( () => {
     game.generatePrize();
-    console.log(game.currentPrize);
   });
 
   $('.check-btn').on('click', () => {
@@ -68,6 +67,19 @@ $(document).ready( () => {
     domUpdates.bonusRound();
   });
 
+  $('.spin-pop-up').click( (e) => {
+    let btn = e.target.textContent;
+    if (btn === 'submit choices') {
+      let letters = domUpdates.getBonusLetters();
+      $('.bonus-box').hide();
+      letters.forEach(letter => {
+        game.checkConsonant(letter.toUpperCase());
+        domUpdates.hideGifs();
+      });
+      $('.input-solve').val('');
+      $('.input-solve, .final-solution-btn').show();
+    } 
+  });
 })
 
 

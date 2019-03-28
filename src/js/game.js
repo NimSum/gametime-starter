@@ -38,7 +38,7 @@ class Game {
       this.currentPrize = bonusWheel.changePrizes();
     } else {
       let wheel = new Wheel();
-      this.currentPrize = wheel.spin();
+      this.currentPrize = wheel.spin(this.round);
       if (this.currentPrize === 'BANKRUPT') {
         this.players[this.playerIndex].totalScore = 0;
         domUpdates.updateBank(this.playerIndex, this.players[this.playerIndex].totalScore)
@@ -93,7 +93,7 @@ class Game {
       this.playerIndex === 2 
         ? this.playerIndex = 0
         : this.playerIndex++;
-        domUpdates.updateActivePlayer(this.playerIndex);
+      domUpdates.updateActivePlayer(this.playerIndex);
     }
   }
 

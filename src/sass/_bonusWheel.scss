@@ -4,6 +4,7 @@
   color: white;
   font-family: $bodyfont;
   opacity: .95;
+  padding: 20px;
   position: absolute;
   right: 15%;
   text-align: center;
@@ -11,21 +12,25 @@
   width: 75%;
   z-index: 5;
 
-  h3 {
+  h4 {
     font-size: 3.5rem;
     letter-spacing: .4rem;
+    text-transform: uppercase;
   }
 
-  h4 {
+  h5 {
     font-size: 2rem;
+    margin: 15px;
   }
 
   button {
     background-color: white;
     border-radius: 25px;
-    color: black;
+    font-family: $bodyfont;
     font-size: 2rem;
+    margin: 15px;
     padding: 5px;
+    width: 10rem;
     &:hover {
       animation: expand-font 0.5s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
     }
@@ -37,21 +42,32 @@
 }
 
 .bonus-input {
+  font-size: 1.8rem;
+  height: 2.5rem;
   margin: 1rem;
-  width: 5rem;
+  width: 3rem;
 }
 
 .bonus-vowel {
+  background-color: $btn;
   border-radius: 15px;
+  font-family: $bodyfont;
+  font-size: 1.5rem;
   height: 2.5rem;
   margin: .5rem;
-  padding: 10px;
+  padding: 5px;
   width: 2.5rem;
 }
 
 .bonus-submit {
+  background-color: white;
   border-radius: 15px;
+  font-family: $bodyfont;
+  font-size: 1.5rem;
   height: 2.5rem;
   margin: .5rem;
   padding: 10px;
+  &:hover {
+    background-color: $btn;
+  }
 }

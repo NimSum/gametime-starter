@@ -1,8 +1,9 @@
 .bonus-round {
-  background-color: darkgreen;
+  background-color: hsla(61, 68%, 67%, 0.9);
+  border-radius: 50px;
   color: white;
   font-family: $bodyfont;
-  font-size: $boardDescription;
+  opacity: .95;
   position: absolute;
   right: 15%;
   text-align: center;
@@ -10,12 +11,24 @@
   width: 75%;
   z-index: 5;
 
+  h3 {
+    font-size: 3.5rem;
+    letter-spacing: .4rem;
+  }
+
+  h4 {
+    font-size: 2rem;
+  }
+
   button {
-    background-color: magenta;
+    background-color: white;
     border-radius: 25px;
-    color: white;
-    font-size: 1rem;
+    color: black;
+    font-size: 2rem;
     padding: 5px;
+    &:hover {
+      animation: expand-font 0.5s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
+    }
   }
 }
 

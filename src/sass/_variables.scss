@@ -9,24 +9,15 @@ $bodyfont: 'Viga', sans-serif;
 
 //colors
 $board: hsla(106, 95%, 55%, 0.3);
-$btn: rgba(229, 230, 110, 1);
+$btn: hsla(61, 71%, 67%, 1);
 $playerbg: hsla(106, 5%, 95%, .3);
 $player: hsla(106, 75%, 85%, .6);
 $border: hsla(98, 49%, 44%, 1);
-// $p1: ;
-// $p2: ;
-// $p3: ;
+$p1: hsla(161, 57%, 58%, .7);
+$p2: hsla(307, 41%, 44%, .9);
+$p3: hsla(230, 83%, 60%, .8);
 
 // animations
-
-@keyframes slideIn {
-  0% {
-    transform: translateX(-300px);
-  }
-  100% {
-    transform: translateX(0px);
-  }
-}
 
 @keyframes spin-prize {
   0% {

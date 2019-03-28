@@ -11,9 +11,9 @@
     </header>
     <section class="splash">
         <h2>Enter Player Names</h2>
-        <p>Player 1: <input id="p1Name" type="text" placeholder="Morty"></p>
-        <p>Player 2: <input id="p2Name" type="text" placeholder="Mr. Poopy Butthole"></p>
-        <p>Player 3: <input id="p3Name" type="text" placeholder="Pickle Rick"></p>
+        <p class="p1">Player 1: <input id="p1Name" type="text" placeholder="Morty"></p>
+        <p class="p2">Player 2: <input id="p2Name" type="text" placeholder="Mr. Poopy Butthole"></p>
+        <p class="p3">Player 3: <input id="p3Name" type="text" placeholder="Pickle Rick"></p>
         <button class="start-btn">Start Game</button>
         <!-- splash page here -->
       </section>
@@ -28,7 +28,7 @@
         <div label="player input field" class="spin-pop-up">
           <!-- <p>enter letter here:</p> -->
           <input class="ltr-input guess-cons" type="text" maxlength="1">
-          <button class="check-btn guess-cons">Consonant Guess:</button>
+          <button class="check-btn guess-cons">Choose</button>
           <input type="text" class="input-solve" placeholder="Solve the Puzzle">
           <button class="final-solution-btn">Solve Puzzle</button>
           <div label="vowels" class="vowels-to-buy">
@@ -59,19 +59,19 @@
     <section class="player-section game-page">
     <!-- player section -->
       <article>
-        <img class="player-image player-one" src="images/Morty.png" alt="player-one">
+        <img class="player-image player-one" src="/images/Morty.png" alt="player-one">
         <h3 class="player-name" id="p1Name-board">Player 1</h3>
         <h4 class="player-score-label">Score:<span class="player-score p1-score">0</span></h4>
         <h4 class="player-bank-label">Bank:<span class="player-bank p1-bank">0</span></h4>
       </article>
       <article>
-        <img class="player-image player-two" src="images/Mr_poopy_butthole.png" alt="player-one">
+        <img class="player-image player-two" src="/images/Mr_poopy_butthole.png" alt="player-one">
         <h3 class="player-name" id="p2Name-board">Player 2</h3>
         <h4 class="player-score-label">Score:<span class="player-score p2-score">0</span></h4>
         <h4 class="player-bank-label">Bank:<span class="player-bank p2-bank">0</span></h4>
       </article>
       <article>
-        <img class="player-image player-three" src="images/Pickle_rick.png" alt="player-one">
+        <img class="player-image player-three" src="/images/Pickle_rick.png" alt="player-one">
         <h3 class="player-name" id="p3Name-board">Player 3</h3>
         <h4 class="player-score-label">Score:<span class="player-score p3-score">0</span></h4>
         <h4 class="player-bank-label">Bank:<span class="player-bank p3-bank">0</span></h4>
@@ -79,8 +79,8 @@
     </section>
     <section class="bonus-round popup">
       <h4>bonus round</h4>
-      <p><span>Player 1</span> has made it to the final round!</p>
-      <h5>Directions</h5>
+      <p><span class="winner">Player 1</span> has made it to the final round!</p>
+      <h5>How to Play:</h5>
       <p>Choose three consonants and a vowel before attemping to solve the final puzzle. If you solve correctly, you will win the special intergalactic prize and the money in your bank. If you lose, you'll only win the money in your bank.</p>
       <button class="btn-popup">Got it!</button>
     </section>
